@@ -31,8 +31,10 @@ if node['beanstalkd']['ebs_size'].to_i > 0
     size node['beanstalkd']['ebs_size']
     device "/dev/sdh"
     action [ :create, :attach ]
-    volume_type node['beanstalkd']['volume_type']
-    piops node['beanstalkd']['piops']
+    if node['beanstalkd']['volume_type'] != 'standard'
+      volume_type node['beanstalkd']['volume_type']
+      piops node['beanstalkd']['piops']
+    end
   end
 
   bash "format-data-beanstalkd" do
