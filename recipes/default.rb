@@ -5,10 +5,10 @@
 # Copyright 2012, Extendi
 #
 
-install_dir = "/usr/local/src/beanstalkd-1.8"
+install_dir = "/usr/local/src/beanstalkd-1.9"
 
 ark 'beanstalkd' do
-  url "https://github.com/downloads/kr/beanstalkd/beanstalkd-1.8.tar.gz"
+  url "https://github.com/kr/beanstalkd/archive/v1.9.tar.gz"
   version "1.8"
   path "/usr/local/src/beanstalkd"
   prefix_bin "/usr/local/bin"
